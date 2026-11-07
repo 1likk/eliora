@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eliora — бренд одежды, вдохновлённый красотой природы">
+    <title>Eliora - одежда, вдохновлённая природой</title>
+    <link rel="icon" type="image/webp" href="/static/img/logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="/static/js/order.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Основная навигация">
+            <a href="#catalog">Каталог</a>
+            <a href="#about">О бренде</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__content">
+                <h1 id="hero-title">Eliora</h1>
+                <p>Бренд одежды, вдохновлённый красотой природы</p>
+            </div>
+            <div class="hero__art">
+                <img src="/static/img/main_image.webp" alt="Лесная иллюстрация Eliora">
+            </div>
+        </section>
+
+        <section class="catalog section-container reveal" id="catalog" aria-labelledby="catalog-title">
+            <h2 id="catalog-title">Каталог</h2>
+            <div class="catalog__grid">
+                <article class="product product--out-of-stock reveal reveal--delay" data-product="bambi" tabindex="0">
+                    <div class="product__image">
+                        <span class="product__badge">OUT OF STOCK</span>
+                        <img src="/static/img/bambi_1.webp" alt="Худи Bambi">
+                    </div>
+                    <h3>Bambi</h3>
+                </article>
+                <article class="product product--out-of-stock reveal reveal--delay-2" data-product="rabbit" tabindex="0">
+                    <div class="product__image">
+                        <span class="product__badge">OUT OF STOCK</span>
+                        <img src="/static/img/rabbit_1.webp" alt="Худи Rabbit">
+                    </div>
+                    <h3>Rabbit</h3>
+                </article>
+            </div>
+        </section>
+
+        <section class="about section-container reveal" id="about" aria-labelledby="about-title">
+            <h2 id="about-title">О бренде</h2>
+            <img class="about__image" src="/static/img/about_image.webp" alt="Природа, вдохновляющая Eliora">
+            <p>Eliora - бренд одежды, вдохновлённый природой. Мы замечаем, как меняются оттенки с приходом нового сезона, как свет ложится на листья и какие узоры можно найти в самых простых вещах. Эти наблюдения мы переносим в одежду через цвет, фактуру и детали.</p>
+        </section>
+
+        <section class="faq section-container reveal" id="faq" aria-labelledby="faq-title">
+            <h2 id="faq-title">Часто задаваемые вопросы</h2>
+            <div class="faq__list">
+                <details class="faq__item">
+                    <summary>Возможен ли возврат?</summary>
+                    <p>Вы можете вернуть товар, приобретенный в нашем интернет-магазине, в течение 7 дней с момента получения заказа, при условии сохранения товарного вида, потребительских свойств Товара, а также документа, подтверждающего факт и условия покупки указанного Товара.</p>
+                </details>
+                <details class="faq__item">
+                    <summary>Как выбрать подходящий размер?</summary>
+                    <p>Размерную сетку вы можете найти на странице каждого изделия.<br>Рекомендуем ознакомиться с замерами перед оформлением заказа, чтобы выбрать наиболее подходящий размер.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <button class="floating-cart is-hidden" id="floating-cart" type="button" aria-label="Открыть корзину">
+        <svg class="floating-cart__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.5 8.5h9l-1 9h-7z"></path>
+            <path d="M9.5 8.5a2.5 2.5 0 0 1 5 0"></path>
+        </svg>
+        <span class="cart-count">0</span>
+    </button>
+
+    <div class="modal" id="product-modal" aria-hidden="true">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__panel modal__panel--product" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+            <button class="modal__close" type="button" data-close-modal aria-label="Закрыть">×</button>
+            <div class="product-modal__gallery">
+                <button class="gallery__arrow gallery__arrow--prev" id="gallery-prev" type="button" aria-label="Предыдущее фото">‹</button>
+                <img class="product-modal__image" id="product-modal-image" src="" alt="">
+                <button class="gallery__arrow gallery__arrow--next" id="gallery-next" type="button" aria-label="Следующее фото">›</button>
+                <div class="gallery__dots" id="gallery-dots" aria-label="Выбор фото"></div>
+            </div>
+            <div class="product-modal__details">
+                <p class="product-modal__eyebrow" id="product-modal-eyebrow"></p>
+                <h2 id="product-modal-title"></h2>
+                <p class="product-modal__price" id="product-modal-price"></p>
+                <p>Худи из плотного хлопка. Отправка после закрытия предзаказа.</p>
+                <div class="size-selector">
+                    <span>Размер</span>
+                    <div class="size-options" id="size-options"></div>
+                </div>
+                <button class="modal__primary" id="add-to-cart" type="button">Добавить в корзину</button>
+                <p class="modal__status" id="product-modal-status" role="status"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="cart-modal" aria-hidden="true">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+            <button class="modal__close" type="button" data-close-modal aria-label="Закрыть">×</button>
+            <h2 id="cart-modal-title">Корзина</h2>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="cart-total"><span>Итого</span><strong id="cart-total">0 ₽</strong></div>
+            <button class="modal__primary" id="checkout-button" type="button">Перейти к оформлению</button>
+        </div>
+    </div>
+
+    <div class="modal" id="checkout-modal" aria-hidden="true">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+            <button class="modal__close" type="button" data-close-modal aria-label="Закрыть">×</button>
+            <h2 id="checkout-modal-title">Оформление предзаказа</h2>
+            <div class="checkout-summary" id="checkout-summary"></div>
+            <form class="checkout-form" id="checkout-form">
+                <label>Имя<input name="name" autocomplete="name" placeholder="Ваше имя" required></label>
+                <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required></label>
+                <label>Telegram<input name="telegram" placeholder="@username" required></label>
+                <label>Адрес доставки<textarea name="address" rows="3" placeholder="Город, улица, дом, квартира" required></textarea></label>
+                <button class="modal__primary" type="submit">Отправить заявку</button>
+                <p class="modal__status" id="checkout-status" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <span>© Eliora, 2026</span>
+            <nav aria-label="Ссылки бренда">
+                <a href="https://t.me/elioraonline" target="_blank" rel="noreferrer">Telegram</a>
+                <a href="#" aria-label="Instagram будет добавлен позже">Instagram</a>
+                <a href="/static/templates/offerta.html">Оферта</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
