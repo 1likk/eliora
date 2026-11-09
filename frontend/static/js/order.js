@@ -1,7 +1,7 @@
 const PRODUCTS = {
     bambi: {
         id: 'bambi',
-        name: 'Bambi',
+        name: 'ELIORA “BAMBI” ZIP-HODDIE',
         price: 6500,
         available: true,
         images: ['/static/img/bambi_1.webp',
@@ -12,7 +12,7 @@ const PRODUCTS = {
     },
     rabbit: {
         id: 'rabbit',
-        name: 'Rabbit',
+        name: 'ELIORA “RABBIT” ZIP-HODDIE',
         price: 5500,
         available: true,
         images: ['/static/img/rabbit_1.webp', 

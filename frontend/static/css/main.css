@@ -208,12 +208,13 @@ html.reveal-ready .reveal.is-visible {
 }
 
 .product h3 {
+    min-height: 46px;
     margin: 12px 0 0;
     color: var(--color-model);
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 36px;
+    font-size: 23px;
     font-weight: 600;
-    line-height: 1;
+    line-height: 1.05;
 }
 
 .modal__primary {
@@ -417,7 +418,8 @@ html.reveal-ready .reveal.is-visible {
     margin: 0;
     color: var(--color-heading);
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 42px;
+    font-size: clamp(30px, 4vw, 42px);
+    letter-spacing: -0.02em;
     line-height: 1;
 }
 
@@ -814,7 +816,8 @@ html.reveal-ready .reveal.is-visible {
 
     .product h3 {
         margin-top: 8px;
-        font-size: 28px;
+        min-height: 38px;
+        font-size: 17px;
     }
 
     .floating-cart {
