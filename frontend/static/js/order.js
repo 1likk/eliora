@@ -3,15 +3,23 @@ const PRODUCTS = {
         id: 'bambi',
         name: 'Bambi',
         price: 6500,
-        available: false,
-        images: ['/static/img/bambi_1.webp', '/static/img/bambi_2.webp'],
+        available: true,
+        images: ['/static/img/bambi_1.webp',
+                '/static/img/bambi_2.webp',
+                '/static/img/bambi_3.webp',
+                '/static/img/bambi_4.webp',
+                '/static/img/bambi_rabbit_5.webp'],
     },
     rabbit: {
         id: 'rabbit',
         name: 'Rabbit',
         price: 5500,
-        available: false,
-        images: ['/static/img/rabbit_1.webp', '/static/img/rabbit_2.webp'],
+        available: true,
+        images: ['/static/img/rabbit_1.webp', 
+                '/static/img/rabbit_2.webp',
+                '/static/img/rabbit_3.webp',
+                '/static/img/rabbit_4.webp',
+                '/static/img/bambi_rabbit_5.webp']
     },
 };
 
